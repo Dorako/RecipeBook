@@ -20,16 +20,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" id="bZG-OE-QYL">
+                                    <rect key="frame" x="0.0" y="64" width="768" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="nuX-7O-oMj"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" id="3eH-KW-Yvm">
-                                        <rect key="frame" x="0.0" y="86" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="130" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3eH-KW-Yvm">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3eH-KW-Yvm" id="YVI-tc-AgZ">
                                             <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="vHC-h2-Y3l" kind="push" id="vOV-Hz-6eg"/>
+                                            <segue destination="vHC-h2-Y3l" kind="push" identifier="showRecipeDetail" id="uat-09-4t2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -48,15 +58,27 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe Book" id="0Qk-Wa-kCJ"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="LpX-D5-H0I" id="8Hp-yM-IiE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="LpX-D5-H0I">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Gme-7a-EQ6"/>
+                        <outlet property="searchBar" destination="bZG-OE-QYL" id="vpC-Ft-3NO"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="J8a-0g-Qep"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="csw-oY-H7A"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="lJZ-0i-XqL"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="545" y="-576"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="rwr-li-smI">
             <objects>
-                <viewController id="vHC-h2-Y3l" sceneMemberID="viewController">
+                <viewController id="vHC-h2-Y3l" customClass="RecipeDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HQW-oG-cR7"/>
                         <viewControllerLayoutGuide type="bottom" id="Nzx-WP-Qcl"/>
@@ -64,18 +86,39 @@
                     <view key="view" contentMode="scaleToFill" id="dvH-4n-7S7">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geA-Fl-oMY">
+                                <rect key="frame" x="363" y="502" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="geA-Fl-oMY" secondAttribute="centerX" id="CYZ-4s-xUe"/>
+                            <constraint firstAttribute="centerY" secondItem="geA-Fl-oMY" secondAttribute="centerY" id="D5f-CY-T9M"/>
+                            <constraint firstItem="geA-Fl-oMY" firstAttribute="centerY" secondItem="dvH-4n-7S7" secondAttribute="centerY" id="gik-Sd-AVT"/>
+                            <constraint firstItem="geA-Fl-oMY" firstAttribute="centerX" secondItem="dvH-4n-7S7" secondAttribute="centerX" id="kGd-Ny-psW"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ojc-2b-M6l"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="recipeLabel" destination="geA-Fl-oMY" id="hxU-Za-aeb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1Y-ab-W87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="-576"/>
+            <point key="canvasLocation" x="1706" y="-576"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oXc-FV-3cM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uhM-PV-0ni" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ktO-1f-7lm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -87,7 +130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7H0-Vn-wXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-334" y="-576"/>
+            <point key="canvasLocation" x="-400" y="-704"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

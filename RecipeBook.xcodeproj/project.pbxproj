@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AB7FE031805B548005E23B3 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7FE021805B548005E23B3 /* RecipeDetailViewController.m */; };
 		3AF13A731804ABAD003926E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF13A721804ABAD003926E0 /* Foundation.framework */; };
 		3AF13A751804ABAD003926E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF13A741804ABAD003926E0 /* CoreGraphics.framework */; };
 		3AF13A771804ABAD003926E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF13A761804ABAD003926E0 /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AB7FE011805B548005E23B3 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
+		3AB7FE021805B548005E23B3 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		3AF13A6F1804ABAD003926E0 /* RecipeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF13A721804ABAD003926E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3AF13A741804ABAD003926E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 				3AF13A8B1804ABAD003926E0 /* RecipeBookViewController.m */,
 				3AF13A8D1804ABAD003926E0 /* Images.xcassets */,
 				3AF13A791804ABAD003926E0 /* Supporting Files */,
+				3AB7FE011805B548005E23B3 /* RecipeDetailViewController.h */,
+				3AB7FE021805B548005E23B3 /* RecipeDetailViewController.m */,
 			);
 			path = RecipeBook;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF13A8C1804ABAD003926E0 /* RecipeBookViewController.m in Sources */,
+				3AB7FE031805B548005E23B3 /* RecipeDetailViewController.m in Sources */,
 				3AF13A7F1804ABAD003926E0 /* main.m in Sources */,
 				3AF13A831804ABAD003926E0 /* RecipeBookAppDelegate.m in Sources */,
 			);
@@ -475,6 +481,7 @@
 				3AF13AA61804ABAD003926E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AF13AA71804ABAD003926E0 /* Build configuration list for PBXNativeTarget "RecipeBookTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +490,7 @@
 				3AF13AA91804ABAD003926E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
